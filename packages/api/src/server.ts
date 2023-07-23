@@ -1,5 +1,7 @@
-import express from 'express';
+import app from "./app";
 
-const server = express();
+import dotenv from "dotenv";
 
-server.listen(8000, () => console.log('success'));
+dotenv.config();
+
+app.listen(8000, () => console.log("Server running on port 8000"));
