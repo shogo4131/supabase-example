@@ -9,14 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/node": "20.4.4",
-    "@types/react": "18.2.15",
-    "@types/react-dom": "18.2.7",
-    "eslint": "8.45.0",
-    "eslint-config-next": "13.4.12",
+    "@kuma-ui/core": "^1.1.0",
     "next": "13.4.12",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "5.1.6"
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@kuma-ui/next-plugin": "^1.1.1",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "eslint": "^8.45.0",
+    "eslint-config-next": "^13.4.12"
   }
 }
