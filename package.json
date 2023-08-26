@@ -8,10 +8,13 @@
   "scripts": {
     "format": "prettier --write \"packages/client/src/app/**/*.{ts,tsx}\" \"packages/api/src/server.ts\""
   },
-  "dependencies": {},
+  "dependencies": {
+    "zod": "^3.22.2"
+  },
   "devDependencies": {
     "@types/node": "^20.4.4",
     "prettier": "^3.0.0",
     "typescript": "^5.1.6"
-  }
+  },
+  "packageManager": "pnpm@8.6.12"
 }
