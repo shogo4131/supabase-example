@@ -4,9 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "preinstall": "npx only-allow pnpm",
   "scripts": {
     "format": "prettier --write \"packages/client/src/app/**/*.{ts,tsx}\" \"packages/api/src/server.ts\""
   },
