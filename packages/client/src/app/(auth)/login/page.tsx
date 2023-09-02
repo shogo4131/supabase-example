@@ -1,6 +1,8 @@
 import { Heading, Box } from "@kuma-ui/core";
 import { InputField } from "@/components/Form";
 import { Button } from "@/components/Elements";
+import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 import { z } from "zod";
 
 const schema = z.object({
@@ -15,7 +17,17 @@ const Login = () => {
       email: formData.get("email"),
       password: formData.get("password"),
     });
-    console.log(parsed);
+    const res = await fetch("http://localhost:8000/api/auth/login", {
+      method: "POST",
+      body: JSON.stringify(parsed),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const { token } = await res.json();
+
+    cookies().set("token", token);
+    redirect("/");
   }
 
   return (
