@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 const schema = z.object({
-  usename: z.string().min(1).max(100),
+  username: z.string().min(1).max(100),
   email: z.string().email(),
   password: z.string().min(8).max(100),
 });
@@ -9,7 +9,7 @@ const schema = z.object({
 export const register = async (formData: FormData) => {
   try {
     const parsed = schema.parse({
-      usename: formData.get("usename"),
+      username: formData.get("username"),
       email: formData.get("email"),
       password: formData.get("password"),
     });

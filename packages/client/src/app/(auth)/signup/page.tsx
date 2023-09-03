@@ -16,7 +16,7 @@ const SignUp = () => {
         アカウント作成
       </Heading>
       <form action={onSubmit}>
-        <InputField type="text" name="usename" label="お名前" width={300} />
+        <InputField type="text" name="username" label="お名前" width={300} />
         <InputField
           type="email"
           name="email"
