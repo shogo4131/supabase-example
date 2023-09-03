@@ -7,13 +7,13 @@ export const register = async (
   req: Request<
     never,
     never,
-    { usename: string; email: string; password: string }
+    { username: string; email: string; password: string }
   >,
   res: Response
 ) => {
-  const { usename, email, password } = req.body;
+  const { username, email, password } = req.body;
 
-  if (!usename || !email || !password) {
+  if (!username || !email || !password) {
     return res.status(400).json({ message: "Missing fields" });
   }
 
@@ -22,7 +22,7 @@ export const register = async (
 
     const user = await prisma.user.create({
       data: {
-        usename,
+        username,
         email,
         password: hashPassword,
       },
