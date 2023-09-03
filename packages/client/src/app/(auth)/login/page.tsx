@@ -8,7 +8,7 @@ const Login = () => {
   async function onSubmit(formData: FormData) {
     "use server";
     await login(formData);
-    redirect("/");
+    redirect("/dashboard");
   }
 
   return (
