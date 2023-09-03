@@ -1,30 +1,13 @@
 import { Heading, Box } from "@kuma-ui/core";
 import { InputField } from "@/components/Form";
 import { Button } from "@/components/Elements";
-import { z } from "zod";
 
-const schema = z.object({
-  usename: z.string().min(1).max(100),
-  email: z.string().email(),
-  password: z.string().min(8).max(100),
-});
+import { register } from "./actions";
 
 const SignUp = () => {
   async function onSubmit(formData: FormData) {
     "use server";
-    const parsed = schema.parse({
-      usename: formData.get("usename"),
-      email: formData.get("email"),
-      password: formData.get("password"),
-    });
-
-    const res = await fetch("http://localhost:8000/api/auth/register", {
-      method: "POST",
-      body: JSON.stringify(parsed),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    await register(formData);
   }
 
   return (
