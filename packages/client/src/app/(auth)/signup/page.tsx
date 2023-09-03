@@ -1,4 +1,4 @@
-import { Heading, Box } from "@kuma-ui/core";
+import { Heading } from "@kuma-ui/core";
 import { InputField } from "@/components/Form";
 import { Button } from "@/components/Elements";
 
@@ -11,13 +11,7 @@ const SignUp = () => {
   }
 
   return (
-    <Box
-      display={"flex"}
-      justify={"center"}
-      alignItems={"center"}
-      flexDir={"column"}
-      height={"calc(100vh - 80px)"}
-    >
+    <>
       <Heading as="h2" fontSize={40} mb={30}>
         アカウント作成
       </Heading>
@@ -39,7 +33,7 @@ const SignUp = () => {
           新規登録
         </Button>
       </form>
-    </Box>
+    </>
   );
 };
 
